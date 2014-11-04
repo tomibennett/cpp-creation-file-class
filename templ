@@ -27,11 +27,11 @@ if [ $# -eq 1 ]; then
   cat $source_file \
     | sed "s/Name/$Name/g" | sed "s/NAME/$NAME/g" \
     | sed "s/username/$username/g" \
-    | sed "s/projectname/$projectname/g" > src/$name.cpp
+    | sed "s/projectname/$projectname/g" > src/$Name.cpp
   cat $include_file \
     | sed "s/Name/$Name/g" | sed "s/NAME/$NAME/g" \
     | sed "s/username/$username/g" \
-    | sed "s/projectname/$projectname/g" > include/$name.hpp
+    | sed "s/projectname/$projectname/g" > include/$Name.hpp
 else
     echo "usage: $0 className"
 fi
