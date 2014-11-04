@@ -1,20 +1,35 @@
-#/bin/bash
+#!/bin/bash
 
-function create_dir {
-  [ -d "./include" ] || mkdir ./include
-  [ -d "./src" ] || mkdir ./src
+dir=~/.cpp_creation_file_class/
+
+function createdir {
+  [ -d "./include" ] || mkdir -p ./include;
+  [ -d "./src" ] || mkdir -p ./src;
 }
 
+if [ ! -d $dir ]; then
+    echo "$dir does not exists. Please installation script: ./install.sh"
+    exit
+fi
+
 if [ $# -eq 1 ]; then
-  source_file="/home/n0t/dev/templates_files/cpp_class"
-  include_file="/home/n0t/dev/templates_files/cpp_include"
+  source_file="$dir/template_files/cpp_class"
+  include_file="$dir/template_files/cpp_include"
   name=`echo $1 | tr "[:upper:]" "[:lower:]"`
   NAME=`echo $name | tr "[:lower:]" "[:upper:]"`
   Name=${name^}
 
-  create_dir
-  cat $source_file | sed "s/name/$name/g" \
-    | sed "s/Name/$Name/g" | sed "s/NAME/$NAME/g" > src/$name.cpp
-  cat $include_file | sed "s/name/$name/g" \
-    | sed "s/Name/$Name/g" | sed "s/NAME/$NAME/g" > include/$name.hpp
+  username="$USER"
+  projectname="${PWD##*/}"
+
+  createdir;
+
+  cat $source_file \
+    | sed "s/Name/$Name/g" | sed "s/NAME/$NAME/g" \
+    | sed "s/username/$name/g" | sed "s/projectname/$projectname/g" > src/$name.cpp
+  cat $include_file \
+    | sed "s/Name/$Name/g" | sed "s/NAME/$NAME/g" \
+    | sed "s/username/$username/g" | sed "s/projectname/$projectname/g" > include/$name.hpp
+else
+    echo "usage: $0 className"
 fi
