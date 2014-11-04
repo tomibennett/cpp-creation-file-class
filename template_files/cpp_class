@@ -7,7 +7,7 @@
 #include "Name.hpp"
 
 //ctors & dtors
-Name::Name {}
+Name::Name() {}
 
 Name::Name(const Name& oth) {}
 
