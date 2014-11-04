@@ -1,0 +1,20 @@
+#/bin/bash
+
+function create_dir {
+  [ -d "./include" ] || mkdir ./include
+  [ -d "./src" ] || mkdir ./src
+}
+
+if [ $# -eq 1 ]; then
+  source_file="/home/n0t/dev/templates_files/cpp_class"
+  include_file="/home/n0t/dev/templates_files/cpp_include"
+  name=`echo $1 | tr "[:upper:]" "[:lower:]"`
+  NAME=`echo $name | tr "[:lower:]" "[:upper:]"`
+  Name=${name^}
+
+  create_dir
+  cat $source_file | sed "s/name/$name/g" \
+    | sed "s/Name/$Name/g" | sed "s/NAME/$NAME/g" > src/$name.cpp
+  cat $include_file | sed "s/name/$name/g" \
+    | sed "s/Name/$Name/g" | sed "s/NAME/$NAME/g" > include/$name.hpp
+fi

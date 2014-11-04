@@ -1,0 +1,26 @@
+/*
+ * Name.cpp for project [...]
+ *
+ * made by Thomas 'magneto' Nieto
+ */
+
+#ifndef _NAME_HPP_
+#define _NAME_HPP_
+
+class Name {
+  private:
+    //attributes
+
+  public:
+    //ctors & dtors
+    Name();
+    Name(const Name&);
+    Name& operator=(const Name&);
+    ~Name();
+
+    //functions members
+};
+
+#endif // _NAME_HPP
+
+

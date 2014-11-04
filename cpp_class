@@ -1,0 +1,20 @@
+/*
+ * Name for project [...]
+ *
+ * made by Thomas 'magneto' Nieto
+ */
+
+#include "Name.hpp"
+
+//ctors & dtors
+Name::Name {}
+
+Name::Name(const Name& oth) {}
+
+Name& Name::operator=(const Name& rht) {}
+
+Name::~Name() {}
+
+
+// members functions
+
