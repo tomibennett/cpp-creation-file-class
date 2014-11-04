@@ -14,6 +14,8 @@ total 4
 total 4
 -rw-r--r-- 1 n0t n0t 311 Nov  4 16:42 example.cpp
 $> cat include/example.hpp
+```
+```
 /*
  * Example.cpp for project [...]
  *
@@ -38,7 +40,13 @@ class Example {
 };
 
 #endif // _EXAMPLE_HPP
+```
+
+```
 $> cat src/example.cpp
+```
+
+```
 /*
  * Example for project [...]
  *
