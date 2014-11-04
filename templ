@@ -26,7 +26,7 @@ if [ $# -eq 1 ]; then
 
   cat $source_file \
     | sed "s/Name/$Name/g" | sed "s/NAME/$NAME/g" \
-    | sed "s/username/$name/g" \
+    | sed "s/username/$username/g" \
     | sed "s/projectname/$projectname/g" > src/$name.cpp
   cat $include_file \
     | sed "s/Name/$Name/g" | sed "s/NAME/$NAME/g" \
