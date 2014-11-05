@@ -9,16 +9,16 @@
 
 class Name {
   private:
-    //attributes
+    // attributes
 
   public:
-    //ctors & dtors
+    // ctors & dtors
     Name();
     Name(const Name&);
     Name& operator=(const Name&);
     ~Name();
 
-    //functions members
+    // functions members
 };
 
 #endif // _NAME_HPP
