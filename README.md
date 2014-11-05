@@ -4,7 +4,7 @@
 $>ls -Rl
 .:
 total0
-$>./templ file
+$>./templ example
 $> ls -Rl
 ./include:
 total 4
@@ -56,7 +56,7 @@ $> cat src/example.cpp
 #include "Example.hpp"
 
 //ctors & dtors
-Example::Example {}
+Example::Example() {}
 
 Example::Example(const Example& oth) {}
 
